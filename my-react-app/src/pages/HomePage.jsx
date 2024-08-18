@@ -13,7 +13,9 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
+    // Llamada a la función getRecommendations que conecta con ChatGPT
     const recommendations = await getRecommendations(symptoms, age, gender);
+    // Navega a la página de resultados con las recomendaciones generadas
     navigate('/results', { state: { recommendations } });
   };
 
